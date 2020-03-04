@@ -36,9 +36,9 @@ int main()
     int num1[ARRAY_SIZE1];
     int num2[ARRAY_SIZE2];
     int num3[ARRAY_SIZE3];
-    string textFile1 = "1000_Integers";
-    string textFile2 = "10000_Integers";
-    string textFile3 = "100000_Integers";
+    string textFile1 = "1000_Integers.txt";
+    string textFile2 = "10000_Integers.txt";
+    string textFile3 = "100000_Integers.txt";
     ofstream outFile1, outFile2, outFile3;
 
 	//RNG
@@ -54,19 +54,19 @@ int main()
     for (int i = 0; i < ARRAY_SIZE1; i++)
     {
         num1[i] = rand() % range;
-        outFile1 << num1[i];
+        outFile1 << num1[i] << endl;
     }
 
     for (int j = 0; j < ARRAY_SIZE2; j++)
     {
         num2[j] = rand() % range;
-        outFile2 << num2[j];
+        outFile2 << num2[j] << endl;
     }
 
     for (int k = 0; k < ARRAY_SIZE3; k++)
     {
         num3[k] = rand() % range;
-        outFile3 << num3[k];
+        outFile3 << num3[k] << endl;
     }
 
 
@@ -79,8 +79,6 @@ int main()
 	cout << "Programmed by: " << PROGRAMMER_NAME << " -- ";
 	cout << __DATE__ << "  " __TIME__ << endl;
 	cout << endl;
-
-    system("pause");
 
 	return 0;
 }
