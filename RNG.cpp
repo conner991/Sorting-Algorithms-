@@ -1,5 +1,5 @@
 /* -----------------------------------------------------------------------------
-FILE NAME:         
+FILE NAME:         RNG.cpp
 DESCRIPTION:       
 USAGE:             
 COMPILER:          GNU g++ compiler on Linux
