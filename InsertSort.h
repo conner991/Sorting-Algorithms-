@@ -17,13 +17,15 @@ Your Name Here     01-01-2020         1.0  Original version
 template <class DT>
 class InsertSort
 {
-    public: 
-        DT insertArray[];
+    private: 
         int swaps;
         int comps;
 
+    public:
         InsertSort();
         ~InsertSort();
+        void iSort(DT array[], int count);
+
 };
 
 #include "InsertSort.cpp"

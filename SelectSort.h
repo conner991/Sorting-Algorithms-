@@ -22,13 +22,14 @@ using namespace std;
 template <class DT>
 class SelectSort
 {
-    public: 
-        DT selectArray[];        
+    private:         
         int swaps;
         int comps;
 
+    public:
         SelectSort();
         ~SelectSort();
+        void sSort(DT array[], int count);
 };
 
 

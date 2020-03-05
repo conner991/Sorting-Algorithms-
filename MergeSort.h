@@ -17,13 +17,16 @@ Your Name Here     01-01-2020         1.0  Original version
 template <class DT>
 class MergeSort
 {
-    public: 
-        DT mergeArray[];
+    private: 
         int swaps;
         int comps;
 
+    public:
         MergeSort();
         ~MergeSort();
+        void mergeSort(DT array[], int left, int right);
+        void merge(DT array[], int left, int mid, int right);
+        void printArray(DT array[], int count);
 
 };
 

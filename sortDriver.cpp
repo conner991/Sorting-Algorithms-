@@ -11,6 +11,7 @@ Author             Date               Version
 Your Name Here     01-01-2020         1.0  Original version
 ----------------------------------------------------------------------------- */
 #include "MergeSort.h"
+
 /* -----------------------------------------------------------------------------
 FUNCTION:          main()
 DESCRIPTION:       
@@ -20,10 +21,10 @@ NOTES:
 
 int main()
 {   
-
+	int testArray[] = {5, 67, 2, 0, 7, 4, 8, 1, 22, 12, 6, 10, 9};
+	int count = sizeof(testArray) / sizeof(testArray[0]);
 	ifstream fileIn1, fileIn2, fileIn3;
 	
-
 	SelectSort<int> selection;
 	InsertSort<int> insertion;
 	MergeSort<int> merge;
@@ -33,7 +34,12 @@ int main()
 	fileIn2.open("10000_Integers.txt");
 	fileIn3.open("100000_Integers.txt");
 
-	while()
+	merge.mergeSort(testArray, 0, count - 1);
+
+	merge.printArray(testArray, count);
+
+
+	
 
 
 
@@ -53,3 +59,9 @@ int main()
 	return 0;
 }
 
+/* -----------------------------------------------------------------------------
+FUNCTION:          main()
+DESCRIPTION:       
+RETURNS:           0
+NOTES:             
+------------------------------------------------------------------------------- */
