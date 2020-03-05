@@ -25,6 +25,7 @@ class InsertSort
         InsertSort();
         ~InsertSort();
         void iSort(DT array[], int count);
+        void printArray(DT array[], int count);
 
 };
 

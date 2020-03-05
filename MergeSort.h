@@ -24,8 +24,8 @@ class MergeSort
     public:
         MergeSort();
         ~MergeSort();
-        void mergeSort(DT array[], int left, int right);
-        void merge(DT array[], int left, int mid, int right);
+        void mergeSort(DT array[], int left, int right, int count);
+        void merge(DT array[], int left, int mid, int right, int count);
         void printArray(DT array[], int count);
 
 };

@@ -34,24 +34,31 @@ int main()
 	fileIn2.open("10000_Integers.txt");
 	fileIn3.open("100000_Integers.txt");
 
-	merge.mergeSort(testArray, 0, count - 1);
+	// Selection Sort
+	selection.sSort(testArray, count);
+	selection.printArray(testArray, count);
 
+	// Insertion Sort
+	insertion.iSort(testArray, count);
+	insertion.printArray(testArray, count);
+	
+	// Merge Sort
+	merge.mergeSort(testArray, 0, count - 1, count);
 	merge.printArray(testArray, count);
 
 
+
+
+
+
+	fileIn1.close();
+	fileIn2.close();
+	fileIn3.close();
+
+
+
 	
-
-
-
-
-
-
-
-
-
-
-	
-	cout << endl;
+	cout << endl << endl;
 	cout << "Programmed by: " << PROGRAMMER_NAME << " -- ";
 	cout << __DATE__ << "  " __TIME__ << endl;
 	cout << endl;

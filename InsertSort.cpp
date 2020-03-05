@@ -67,4 +67,24 @@ void InsertSort<DT>::iSort(DT array[], int count)
     }
 }
 
+/* -----------------------------------------------------------------------------
+FUNCTION:          main()
+DESCRIPTION:       
+RETURNS:           0
+NOTES:             
+------------------------------------------------------------------------------- */
+template <class DT>
+void InsertSort<DT>::printArray(DT array[], int count)
+{
+    cout << endl;
+
+    for(int i = 0; i < count; i++)
+    {   
+        cout << array[i] << " ";
+    }
+
+    cout << endl;
+}
+
+
 #endif

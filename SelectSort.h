@@ -30,6 +30,7 @@ class SelectSort
         SelectSort();
         ~SelectSort();
         void sSort(DT array[], int count);
+        void printArray(DT array[], int count);
 };
 
 
