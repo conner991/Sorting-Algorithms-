@@ -47,7 +47,7 @@ NOTES:             first is for the first index and last is the last index of th
                    subarray of array to be sorted 
 ------------------------------------------------------------------------------- */
 template <class DT>
-void MergeSort<DT>::mergeSort(DT array[], int first, int last, int count)
+void MergeSort<DT>::mergeSort(DT array[], int first, int last, int count, long int& comps)
 {
     if (first < last)
     {
@@ -56,8 +56,8 @@ void MergeSort<DT>::mergeSort(DT array[], int first, int last, int count)
         int mid = first + (last - first) / 2;
 
         // Sort first and second halves
-        mergeSort(array, first, mid, count);
-        mergeSort(array, mid + 1, last, count);
+        mergeSort(array, first, mid, count, comps);
+        mergeSort(array, mid + 1, last, count, comps);
 
         merge(array, first, mid, last, count);
     }
@@ -76,10 +76,11 @@ void MergeSort<DT>::merge(DT array[], int first, int mid, int last, int count)
     DT tempArray[count];
 
     // Initialize the local indices to indicate the subarrays
-    int first1 = first; // Beginning of first subarray
-    int last1 = mid; // End of first subarray
-    int first2 = mid+1; // Beginning of second subarray
-    int last2 = last; // End of second subarray
+    int first1 = first;         // Beginning of first subarray
+    int last1 = mid;            // End of first subarray
+    int first2 = mid+1;         // Beginning of second subarray
+    int last2 = last;           // End of second subarray
+    
     // While both subarrays are not empty, copy the smaller item into the
     // temporary array
     int index = first1; // next available location in tempArray
@@ -120,6 +121,78 @@ void MergeSort<DT>::merge(DT array[], int first, int mid, int last, int count)
     for (index=first; index<=last; index++)
         array[index] = tempArray[index];
 
+}
+
+/* -----------------------------------------------------------------------------
+FUNCTION:          main()
+DESCRIPTION:       
+RETURNS:           0
+NOTES:             
+------------------------------------------------------------------------------- */
+template <class DT>
+void MergeSort<DT>::dataOutW(double cpuTime1, long int& comps1, int dataSet)
+{   
+    switch (dataSet)
+    {
+        case 1: cout << "\n1,000 Integers: Merge Sort, Worst Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        case 2: cout << "\n10,000 Integers: Merge Sort, Worst Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        case 3: cout << "\n100,000 Integers: Merge Sort, Worst Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        default: cout << endl;
+
+    }
+
+    
+}
+
+/* -----------------------------------------------------------------------------
+FUNCTION:          main()
+DESCRIPTION:       
+RETURNS:           0
+NOTES:             
+------------------------------------------------------------------------------- */
+template <class DT>
+void MergeSort<DT>::dataOutB(double cpuTime1, long int& comps1, int dataSet)
+{   
+    switch (dataSet)
+    {
+        case 1: cout << "\n1,000 Integers: Merge Sort, Best Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        case 2: cout << "\n10,000 Integers: Merge Sort, Best Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        case 3: cout << "\n100,000 Integers: Merge Sort, Best Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        default: cout << endl;
+
+    }
+
+    
 }
 
 /* -----------------------------------------------------------------------------

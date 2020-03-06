@@ -25,6 +25,7 @@ SelectSort<DT>::SelectSort()
 {
     swaps = 0;
     comps = 0;
+    array = NULL;
 }
 
 /* -----------------------------------------------------------------------------
@@ -46,7 +47,7 @@ RETURNS:           0
 NOTES:             
 ------------------------------------------------------------------------------- */
 template <class DT>
-void SelectSort<DT>::sSort(DT array[], int count)
+void SelectSort<DT>::sSort(DT array[], int count, long int& swaps, long int& comps)
 {
     int min, temp;
 
@@ -66,6 +67,84 @@ void SelectSort<DT>::sSort(DT array[], int count)
         array[i] = array[min];
         array[min] = temp;
     }
+}
+
+/* -----------------------------------------------------------------------------
+FUNCTION:          main()
+DESCRIPTION:       
+RETURNS:           0
+NOTES:             
+------------------------------------------------------------------------------- */
+template <class DT>
+void SelectSort<DT>::dataOutW(double cpuTime1, long int& swaps1, long int& comps1, int dataSet)
+{   
+    switch (dataSet)
+    {
+        case 1: cout << "\n1,000 Integers: Selection Sort, Worst Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Swaps: " << swaps1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        case 2: cout << "\n10,000 Integers: Selection Sort, Worst Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Swaps: " << swaps1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        case 3: cout << "\n100,000 Integers: Selection Sort, Worst Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Swaps: " << swaps1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        default: cout << endl;
+
+    }
+
+    
+}
+
+/* -----------------------------------------------------------------------------
+FUNCTION:          main()
+DESCRIPTION:       
+RETURNS:           0
+NOTES:             
+------------------------------------------------------------------------------- */
+template <class DT>
+void SelectSort<DT>::dataOutB(double cpuTime1, long int& swaps1, long int& comps1, int dataSet)
+{   
+    switch (dataSet)
+    {
+        case 1: cout << "\n1,000 Integers: Selection Sort, Worst Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Swaps: " << swaps1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        case 2: cout << "\n10,000 Integers: Selection Sort, Worst Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Swaps: " << swaps1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        case 3: cout << "\n100,000 Integers: Selection Sort, Worst Case\n\n";
+                cout << "CPU Runtime: " << cpuTime1 << endl;
+                cout << "Number of Swaps: " << swaps1 << endl;
+                cout << "Number of Comparisons: " << comps1 << endl;
+                
+                break;
+
+        default: cout << endl;
+
+    }
+
+    
 }
 
 /* -----------------------------------------------------------------------------

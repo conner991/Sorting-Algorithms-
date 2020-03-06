@@ -15,9 +15,12 @@ Your Name Here     01-01-2020         1.0  Original version
 
 #include <iostream>
 #include <string>
+#include <cstring>
+#include <iomanip>
 #include <fstream>
-using namespace std;
+#include <ctime>
 
+using namespace std;
 
 template <class DT>
 class SelectSort
@@ -25,11 +28,14 @@ class SelectSort
     private:         
         int swaps;
         int comps;
+        DT *array;
 
     public:
         SelectSort();
         ~SelectSort();
-        void sSort(DT array[], int count);
+        void sSort(DT array[], int count,  long int& swaps, long int& comps);
+        void dataOutW(double cpuTime1, long int& swaps1, long int& comps1, int dataSet);
+        void dataOutB(double cpuTime1, long int& swaps1, long int& comps1, int dataSet);
         void printArray(DT array[], int count);
 };
 

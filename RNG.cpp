@@ -36,9 +36,9 @@ int main()
     int num1[ARRAY_SIZE1];
     int num2[ARRAY_SIZE2];
     int num3[ARRAY_SIZE3];
-    string textFile1 = "1000_Integers.txt";
-    string textFile2 = "10000_Integers.txt";
-    string textFile3 = "100000_Integers.txt";
+    string textFile1 = "1000_Integers_Random.txt";
+    string textFile2 = "10000_Integers_Random.txt";
+    string textFile3 = "100000_Integers_Random.txt";
     ofstream outFile1, outFile2, outFile3;
 
 	//RNG

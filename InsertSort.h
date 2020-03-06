@@ -24,7 +24,9 @@ class InsertSort
     public:
         InsertSort();
         ~InsertSort();
-        void iSort(DT array[], int count);
+        void iSort(DT array[], int count, long int& swaps, long int& comps);
+        void dataOutW(double cpuTime1, long int& swaps1, long int& comps1, int dataSet);
+        void dataOutB(double cpuTime1, long int& swaps1, long int& comps1, int dataSet);
         void printArray(DT array[], int count);
 
 };
