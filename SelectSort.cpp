@@ -56,16 +56,18 @@ void SelectSort<DT>::sSort(DT array[], int count, long int& swaps, long int& com
         min = i;
 
         for (int j = i + 1; j < count; j++)
-        {
+        {   
             if (array[j] < array[min])
             {
                 min = j;
+                comps++;
             }
         }
 
         temp = array[i];
         array[i] = array[min];
         array[min] = temp;
+        swaps++;
     }
 }
 
@@ -76,28 +78,28 @@ RETURNS:           0
 NOTES:             
 ------------------------------------------------------------------------------- */
 template <class DT>
-void SelectSort<DT>::dataOutW(double cpuTime1, long int& swaps1, long int& comps1, int dataSet)
+void SelectSort<DT>::dataOutW(double cpuTime, long int& swaps, long int& comps, int dataSet)
 {   
     switch (dataSet)
     {
-        case 1: cout << "\n1,000 Integers: Selection Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 1: cout << "\n1,000 Integers: Selection Sort, Worst Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl;
                 
                 break;
 
-        case 2: cout << "\n10,000 Integers: Selection Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 2: cout << "\n10,000 Integers: Selection Sort, Worst Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl;
                 
                 break;
 
-        case 3: cout << "\n100,000 Integers: Selection Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 3: cout << "\n100,000 Integers: Selection Sort, Worst Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl;
                 
                 break;
 
@@ -115,28 +117,28 @@ RETURNS:           0
 NOTES:             
 ------------------------------------------------------------------------------- */
 template <class DT>
-void SelectSort<DT>::dataOutB(double cpuTime1, long int& swaps1, long int& comps1, int dataSet)
+void SelectSort<DT>::dataOutB(double cpuTime, long int& swaps, long int& comps, int dataSet)
 {   
     switch (dataSet)
     {
-        case 1: cout << "\n1,000 Integers: Selection Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 1: cout << "\n1,000 Integers: Selection Sort, Best Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl << endl << endl;
                 
                 break;
 
-        case 2: cout << "\n10,000 Integers: Selection Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 2: cout << "\n10,000 Integers: Selection Sort, Best Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl << endl << endl;
                 
                 break;
 
-        case 3: cout << "\n100,000 Integers: Selection Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 3: cout << "\n100,000 Integers: Selection Sort, Best Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl << endl << endl;
                 
                 break;
 

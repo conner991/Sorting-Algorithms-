@@ -61,9 +61,12 @@ void InsertSort<DT>::iSort(DT array[], int count, long int& swaps, long int& com
         {
             array[j + 1] = array[j];
             j = j - 1;
+            comps++;
+            swaps++;
         }
         
         array[j + 1] = key;
+        swaps++;
     }
 }
 
@@ -74,28 +77,28 @@ RETURNS:           0
 NOTES:             
 ------------------------------------------------------------------------------- */
 template <class DT>
-void InsertSort<DT>::dataOutW(double cpuTime1, long int& swaps1, long int& comps1, int dataSet)
+void InsertSort<DT>::dataOutW(double cpuTime, long int& swaps, long int& comps, int dataSet)
 {   
     switch (dataSet)
     {
-        case 1: cout << "\n1,000 Integers: Insertion Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 1: cout << "\n1,000 Integers: Insertion Sort, Worst Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl;
                 
                 break;
 
-        case 2: cout << "\n10,000 Integers: Insertion Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 2: cout << "\n10,000 Integers: Insertion Sort, Worst Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl;
                 
                 break;
 
-        case 3: cout << "\n100,000 Integers: Insertion Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 3: cout << "\n100,000 Integers: Insertion Sort, Worst Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl;
                 
                 break;
 
@@ -113,28 +116,28 @@ RETURNS:           0
 NOTES:             
 ------------------------------------------------------------------------------- */
 template <class DT>
-void InsertSort<DT>::dataOutB(double cpuTime1, long int& swaps1, long int& comps1, int dataSet)
+void InsertSort<DT>::dataOutB(double cpuTime, long int& swaps, long int& comps, int dataSet)
 {   
     switch (dataSet)
     {
-        case 1: cout << "\n1,000 Integers: Insertion Sort, Best Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 1: cout << "\n1,000 Integers: Insertion Sort, Best Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl << endl << endl;
                 
                 break;
 
-        case 2: cout << "\n10,000 Integers: Insertion Sort, Best Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 2: cout << "\n10,000 Integers: Insertion Sort, Best Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl << endl << endl;
                 
                 break;
 
-        case 3: cout << "\n100,000 Integers: Insertion Sort, Best Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Swaps: " << swaps1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 3: cout << "\n100,000 Integers: Insertion Sort, Best Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Swaps: " << swaps << endl;
+                cout << "Number of Comparisons: " << comps << endl << endl << endl;
                 
                 break;
 

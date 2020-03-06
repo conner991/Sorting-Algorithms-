@@ -8,7 +8,7 @@ NOTES:
 MODIFICATION HISTORY:
 Author             Date               Version
 ---------------    ----------         --------------
-Your Name Here     01-01-2020         1.0  Original version
+Conner Fissell     01-01-2020         1.0  Original version
 ----------------------------------------------------------------------------- */
 #include "MergeSort.h"
 
@@ -36,12 +36,7 @@ NOTES:
 int main()
 {   
 
-
 	start();
-
-
-
-
 
 	
 	cout << endl << endl;
@@ -63,15 +58,17 @@ void start()
 	
 	sortedFilesOut();
 	
-	
 	char choice;
 	int dataSet;
 
-	cout << "Which data set do you want to test the\n";
+	cout << "\n\nWhich data set do you want to test the\n";
 	cout << "algorithms with?\n\n";
 	cout << "a.) 1,000\n";
 	cout << "b.) 10,000\n";
 	cout << "c.) 100,000\n";
+	cout << "Choose a, b, or c\n\n";
+
+	cin >> choice;
 
 	switch(choice)
 	{
@@ -168,7 +165,7 @@ void readNout(ofstream& fileOut, int array[], int count)
 {
 	for(int i = 0; i < count; i++)
 	{
-		fileOut << array[i];
+		fileOut << array[i] << endl;
 	}
 
 }
@@ -284,21 +281,21 @@ NOTES:             Selection
 ------------------------------------------------------------------------------- */
 void randomTest1(int array[], int count, int dataSet)
 {	
-	long int swaps1, swaps2;
-	long int comps1, comps2, comps3;
-	clock_t start1, end1, start2, end2, start3, end3;
-	double cpuTime1, cpuTime2, cpuTime3;
+	long int swaps = 0;
+	long int comps = 0;
+	clock_t start, end;
+	double cpuTime = 0;
 
 	SelectSort<int> selection;
 
 	// Selection Sort Worst Case
-	start1 = clock();
-	selection.sSort(array, count, swaps1, comps1);
-    end1 = clock();
+	start = clock();
+	selection.sSort(array, count, swaps, comps);
+    end = clock();
 	// Get CPU time for selection sort 
-    cpuTime1 = (end1 - start1) / CLOCKS_PER_SEC;
+    cpuTime = ((double) (end - start)) / CLOCKS_PER_SEC;
 	// Ouput the data
-	selection.dataOutW(cpuTime1, swaps1, comps1, dataSet);
+	selection.dataOutW(cpuTime, swaps, comps, dataSet);
 
 
 }
@@ -311,21 +308,21 @@ NOTES:             Selection
 ------------------------------------------------------------------------------- */
 void sortedTest1(int array[], int count, int dataSet)
 {
-	long int swaps1, swaps2;
-	long int comps1, comps2, comps3;
-	clock_t start1, end1, start2, end2, start3, end3;
-	double cpuTime1, cpuTime2, cpuTime3;
+	long int swaps = 0;
+	long int comps = 0;
+	double cpuTime;
+	clock_t start, end;
 
 	SelectSort<int> selection;
 
 	// Selection Sort Best Case
-	start1 = clock();
-	selection.sSort(array, count, swaps1, comps1);
-    end1 = clock();
+	start = clock();
+	selection.sSort(array, count, swaps, comps);
+    end = clock();
 	// Get CPU time for selection sort 
-    cpuTime1 = (end1 - start1) / CLOCKS_PER_SEC;
+    cpuTime = ((double) (end - start)) / CLOCKS_PER_SEC;
 	// Ouput the data
-	selection.dataOutB(cpuTime1, swaps1, comps1, dataSet);
+	selection.dataOutB(cpuTime, swaps, comps, dataSet);
 
 }
 /* -----------------------------------------------------------------------------
@@ -336,21 +333,21 @@ NOTES:             Insertion
 ------------------------------------------------------------------------------- */
 void randomTest2(int array[], int count, int dataSet)
 {
-	long int swaps1, swaps2;
-	long int comps1, comps2, comps3;
-	clock_t start1, end1, start2, end2, start3, end3;
-	double cpuTime1, cpuTime2, cpuTime3;
+	long int swaps = 0;
+	long int comps = 0;
+	double cpuTime;
+	clock_t start, end;
 
 	InsertSort<int> insertion;
 
 	// Insertion Sort
-	start2 = clock();
-	insertion.iSort(array, count, swaps2, comps2);
-    end2 = clock();
+	start = clock();
+	insertion.iSort(array, count, swaps, comps);
+    end = clock();
 	// Get CPU time for Insertion sort 
-    cpuTime2 = (end2 - start2) / CLOCKS_PER_SEC;
+    cpuTime = ((double) (end - start)) / CLOCKS_PER_SEC;
 	// Ouput the data
-	insertion.dataOutW(cpuTime1, swaps1, comps1, dataSet);
+	insertion.dataOutW(cpuTime, swaps, comps, dataSet);
 }
 /* -----------------------------------------------------------------------------
 FUNCTION:          
@@ -360,21 +357,21 @@ NOTES:             Insertion
 ------------------------------------------------------------------------------- */
 void sortedTest2(int array[], int count, int dataSet)
 {
-	long int swaps1, swaps2;
-	long int comps1, comps2, comps3;
-	clock_t start1, end1, start2, end2, start3, end3;
-	double cpuTime1, cpuTime2, cpuTime3;
+	long int swaps = 0;
+	long int comps = 0;
+	double cpuTime;
+	clock_t start, end;
 
 	InsertSort<int> insertion;
 
 	// Insertion Sort
-	start2 = clock();
-	insertion.iSort(array, count, swaps2, comps2);
-    end2 = clock();
+	start = clock();
+	insertion.iSort(array, count, swaps, comps);
+    end = clock();
 	// Get CPU time for Insertion sort 
-    cpuTime2 = (end2 - start2) / CLOCKS_PER_SEC;
+    cpuTime = ((double) (end - start)) / CLOCKS_PER_SEC;
 	// Ouput the data
-	insertion.dataOutB(cpuTime1, swaps1, comps1, dataSet);
+	insertion.dataOutB(cpuTime, swaps, comps, dataSet);
 
 }
 /* -----------------------------------------------------------------------------
@@ -385,21 +382,21 @@ NOTES:             Merge
 ------------------------------------------------------------------------------- */
 void randomTest3(int array[], int count, int dataSet)
 {	
-	long int swaps1, swaps2;
-	long int comps1, comps2, comps3;
-	clock_t start1, end1, start2, end2, start3, end3;
-	double cpuTime1, cpuTime2, cpuTime3;
+	long int swaps = 0;
+	long int comps = 0;
+	double cpuTime;
+	clock_t start, end;
 
 	MergeSort<int> merge;
 
 	// Merge Sort
-	start3 = clock();
-	merge.mergeSort(array, 0, count - 1, count, comps3);
-    end3 = clock();
+	start = clock();
+	merge.mergeSort(array, 0, count - 1, count, comps);
+    end = clock();
 	// Get CPU time for Merge sort 
-    cpuTime3 = (end3 - start3) / CLOCKS_PER_SEC;
+    cpuTime = ((double) (end - start)) / CLOCKS_PER_SEC;
 	// Ouput the data
-	merge.dataOutW(cpuTime1, comps1, dataSet);
+	merge.dataOutW(cpuTime, comps, dataSet);
 
 }
 
@@ -411,31 +408,21 @@ NOTES:             Merge
 ------------------------------------------------------------------------------- */
 void sortedTest3(int array[], int count, int dataSet)
 {
-	long int swaps1, swaps2;
-	long int comps1, comps2, comps3;
-	clock_t start1, end1, start2, end2, start3, end3;
-	double cpuTime1, cpuTime2, cpuTime3;
+	long int swaps = 0;
+	long int comps = 0;
+	double cpuTime;
+	clock_t start, end;
 
 	MergeSort<int> merge;
 
 	// Merge Sort
-	start3 = clock();
-	merge.mergeSort(array, 0, count - 1, count, comps3);
-    end3 = clock();
+	start = clock();
+	merge.mergeSort(array, 0, count - 1, count, comps);
+    end = clock();
 	// Get CPU time for selection sort 
-    cpuTime3 = (end3 - start3) / CLOCKS_PER_SEC;
+    cpuTime = ((double) (end - start)) / CLOCKS_PER_SEC;
 	// Ouput the data
-	merge.dataOutB(cpuTime1, comps1, dataSet);
+	merge.dataOutB(cpuTime, comps, dataSet);
 
 	
 }
-
-
-
-
-/* -----------------------------------------------------------------------------
-FUNCTION:          
-DESCRIPTION:       
-RETURNS:           0
-NOTES:             
-------------------------------------------------------------------------------- */

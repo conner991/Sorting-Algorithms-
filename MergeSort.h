@@ -25,7 +25,7 @@ class MergeSort
         MergeSort();
         ~MergeSort();
         void mergeSort(DT array[], int left, int right, int count, long int& comps);
-        void merge(DT array[], int left, int mid, int right, int count);
+        void merge(DT array[], int left, int mid, int right, int count, long int& comps);
         void dataOutW(double cpuTime1, long int& comps1, int dataSet);
         void dataOutB(double cpuTime1, long int& comps1, int dataSet);
         void printArray(DT array[], int count);

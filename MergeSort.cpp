@@ -59,7 +59,7 @@ void MergeSort<DT>::mergeSort(DT array[], int first, int last, int count, long i
         mergeSort(array, first, mid, count, comps);
         mergeSort(array, mid + 1, last, count, comps);
 
-        merge(array, first, mid, last, count);
+        merge(array, first, mid, last, count, comps);
     }
 }
 
@@ -70,7 +70,7 @@ RETURNS:           0
 NOTES:             
 ------------------------------------------------------------------------------- */
 template <class DT>
-void MergeSort<DT>::merge(DT array[], int first, int mid, int last, int count)
+void MergeSort<DT>::merge(DT array[], int first, int mid, int last, int count, long int& comps)
 {
 
     DT tempArray[count];
@@ -89,15 +89,18 @@ void MergeSort<DT>::merge(DT array[], int first, int mid, int last, int count)
         // At this point, tempArray[first..index-1] is in order
         if (array[first1] <= array[first2])
         {
-        tempArray[index] = array[first1];
-        first1++;
+            tempArray[index] = array[first1];
+            first1++;
+            comps++;
         }
         else
         {
-        tempArray[index] = array[first2];
-        first2++;
+            tempArray[index] = array[first2];
+            first2++;
         } 
+        
         index++;
+        comps++;
     } 
 
     while (first1<=last1)
@@ -106,6 +109,7 @@ void MergeSort<DT>::merge(DT array[], int first, int mid, int last, int count)
         tempArray[index] = array[first1];
         first1++;
         index++;
+        comps++;
     } 
 
     // Finish off the second subarray, if necessary
@@ -115,6 +119,7 @@ void MergeSort<DT>::merge(DT array[], int first, int mid, int last, int count)
         tempArray[index] = array[first2];
         first2++;
         index++;
+        comps++;
     } 
 
     // Copy the result back into the original array
@@ -130,25 +135,25 @@ RETURNS:           0
 NOTES:             
 ------------------------------------------------------------------------------- */
 template <class DT>
-void MergeSort<DT>::dataOutW(double cpuTime1, long int& comps1, int dataSet)
+void MergeSort<DT>::dataOutW(double cpuTime, long int& comps, int dataSet)
 {   
     switch (dataSet)
     {
-        case 1: cout << "\n1,000 Integers: Merge Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 1: cout << "\n1,000 Integers: Merge Sort, Worst Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Comparisons: " << comps << endl;
                 
                 break;
 
-        case 2: cout << "\n10,000 Integers: Merge Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 2: cout << "\n10,000 Integers: Merge Sort, Worst Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Comparisons: " << comps << endl;
                 
                 break;
 
-        case 3: cout << "\n100,000 Integers: Merge Sort, Worst Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 3: cout << "\n100,000 Integers: Merge Sort, Worst Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Comparisons: " << comps << endl;
                 
                 break;
 
@@ -166,25 +171,25 @@ RETURNS:           0
 NOTES:             
 ------------------------------------------------------------------------------- */
 template <class DT>
-void MergeSort<DT>::dataOutB(double cpuTime1, long int& comps1, int dataSet)
+void MergeSort<DT>::dataOutB(double cpuTime, long int& comps, int dataSet)
 {   
     switch (dataSet)
     {
-        case 1: cout << "\n1,000 Integers: Merge Sort, Best Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 1: cout << "\n1,000 Integers: Merge Sort, Best Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Comparisons: " << comps << endl << endl << endl;
                 
                 break;
 
-        case 2: cout << "\n10,000 Integers: Merge Sort, Best Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 2: cout << "\n10,000 Integers: Merge Sort, Best Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Comparisons: " << comps << endl << endl << endl;
                 
                 break;
 
-        case 3: cout << "\n100,000 Integers: Merge Sort, Best Case\n\n";
-                cout << "CPU Runtime: " << cpuTime1 << endl;
-                cout << "Number of Comparisons: " << comps1 << endl;
+        case 3: cout << "\n100,000 Integers: Merge Sort, Best Case\n";
+                cout << "CPU Runtime: " << cpuTime << endl;
+                cout << "Number of Comparisons: " << comps << endl << endl << endl;
                 
                 break;
 
